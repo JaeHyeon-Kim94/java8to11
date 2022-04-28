@@ -1,0 +1,13 @@
+책임 연쇄 패턴(Chain of Responsibility)
+
+ - 요청을 보내는 쪽(sender)와 요청을 처리하는 쪽(receiver)을 분리하는 패턴
+ - 핸들러 체인을 사용해 요청을 처리함
+ - 핸들러라는 공통의 인터페이스/추상클래스가 있고, ConcreteHandler들은 Chain으로 연결되어 있는 상태이고,
+    Client는 ConcreteHandler들이 어떻게 연결되어있는지 상관 없이 RequestHandler라는 타입에 요청할 뿐.
+
+
+ -장점
+    Client를 변경하지 않고 얼마든지 다양한 형태로 구성할 수 있음.
+
+ -단점
+    디버깅이 어려울 수 있다.
