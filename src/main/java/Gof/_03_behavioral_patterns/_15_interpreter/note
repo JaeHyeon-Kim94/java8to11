@@ -24,3 +24,10 @@ NonTerminalExpression : interpret(Context)
 xyz+-(123+-) x,y,z는 TerminalExpression. 그 자체로 값 리턴 가능.
             +, -는 NonTerminalExpression. 그 자체로 값 리턴 불가능. 다른 TerminalExpression 혹은 NonTerminalExpression의
             interpret 호출해봐야 결과 알 수 있음.
+
+- 장점
+    자주 등장하는 문제 패턴을 언어와 문법으로 정의할 수 있다.
+    기존 코드를 변경하지 않고 새로운 Expression 추가할 수 있다.
+
+- 단점
+    복잡한 문법을 표현하라면 Expression과 Parser가 복잡해진다.
