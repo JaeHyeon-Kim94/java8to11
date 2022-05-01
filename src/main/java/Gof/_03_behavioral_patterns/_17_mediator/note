@@ -1,0 +1,24 @@
+- 중재자 패턴
+
+ 여러 객체들 간의 의사소통하는 방법을 캡슐화 해서 그 여러 객체들 간의 coupling을 낮추는 것.
+
+ - <interface> Mediator, ConcreteMediator
+
+ - Colleague, Colleague A, Colleague B
+
+ - Colleague는 Mediator 인터페이스를 참조하고 있으며, ConcreteMediator는 Colleague A, B를 참조하고 있다.
+ - Colleague A, B가 Colleague를 참조하고 있진 않음. 상속을 받을 뿐
+
+- 각각의 Colleague들(Guest,CleaningService, restaurant)은 Mediator(FrontDesk)만 바라보게.
+
+ 장점
+ - 인터페이스를 사용한다면 변경에 유연한 구조로 구성 가능.
+ - 각각의 Colleague들의 코드가 간결해짐. 의존성이 Mediator 하나로 좁혀지기 때문에.
+
+ 단점
+ - 중재자 역할을 하는 클래스의 복잡도와 결합도가 증가한다.
+
+
+자바 : ExecutorService, Executor
+
+스프링 : DispatcherServlet
