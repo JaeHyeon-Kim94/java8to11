@@ -6,7 +6,16 @@ import java.util.concurrent.SubmissionPublisher;
 public class FlowInJava {
 
     public static void main(String[] args) throws InterruptedException {
+        //비동기
         Flow.Publisher<String> publisher = new SubmissionPublisher<>();
+        //동기
+        Flow.Publisher<String> publisher1 = new Flow.Publisher<>(){
+            @Override
+            public void subscribe(Flow.Subscriber<? super String> subscriber) {
+                subscriber.onNext("hello flow");
+                subscriber.onComplete();
+            }
+        };
 
         Flow.Subscriber<String> subscriber = new Flow.Subscriber<String>() {
 

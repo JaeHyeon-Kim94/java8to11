@@ -1,0 +1,30 @@
+비지터 패턴
+
+- 기존의 코드를 건드리지 않고 새로운 기능을 추가하는 것.
+- 더블 디스패치를 활용할 수 있다
+    - Dispatch : 요청이 들어왔을 때 요청을 처리할 구체적인 클래스, 메서드를 찾아서 배치하는 것. 과정.
+
+- <interface> Element
+    + accept(Visitor)
+
+- ElementA
+    + accept(Visitor)
+
+- ElementB
+    + accept(Visitor)
+
+- <interface> Visitor
+    + visit(ElementA)
+    + visit(ElementB)
+
+- ConcreteVisitor
+    + visit(ElementA)
+    + visit(ElementB)
+
+ - 장점
+    OCP에 적합, 유연한 구조
+
+ - 단점
+    Double Dispatch를 이해하기가 어려움.
+    한편으로는 OCP 적합하지만, 추가나 삭제에 있어서 그것이 깨질 위험성도 존재.
+                            추가나 삭제를 할 경우 일일이 메서드 및 클래스를 만들거나 삭제해야 함.
